@@ -6,6 +6,9 @@ import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    val REQ_FOR_EDIT = 1000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,7 +35,28 @@ class MainActivity : AppCompatActivity() {
         editBtn.setOnClickListener {
 //            왕복 티켓 발권
             val myIntent = Intent(this, EditActivity::class.java)
-            startActivityForResult(myIntent,1000)
+            startActivityForResult(myIntent,REQ_FOR_EDIT)
         }
+    }
+
+//    수정한 데이터 확인 후 UI 반영
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+//    requestCode : 출발 목적 코드, resultCode : 실제 수정 여부 확인 코드, data : 수정된 데이터 첨부된 intent
+//        실제로 수정이 완료 되었는가?
+        if (resultCode == RESULT_OK) {
+//            출발 목적이 맞는가?
+            if (requestCode == REQ_FOR_EDIT) {
+//                수정된 데이터를 바탕으로 UI를 반영
+//                수정된 데이터를 변수화
+                val name = data?.getStringExtra("name")
+                val phoneNum = data?.getStringExtra("phoneNum")
+
+//                UI 반영 코드
+                nameTxt.text = name
+                phoneNumTxt.text = phoneNum
+            }
+        }
+
     }
 }
