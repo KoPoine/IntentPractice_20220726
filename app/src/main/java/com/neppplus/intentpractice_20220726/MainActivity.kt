@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
 //        Intent(3) 회원정보 수정 버튼 클릭 이벤트
 //        데이터 수정받기 위한 출발 코드 작성
         editBtn.setOnClickListener {
+//            왕복 티켓 발권
             val myIntent = Intent(this, EditActivity::class.java)
             startActivityForResult(myIntent,1000)
         }
