@@ -1,6 +1,7 @@
 package com.neppplus.intentpractice_20220726
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,6 +37,13 @@ class MainActivity : AppCompatActivity() {
 //            왕복 티켓 발권
             val myIntent = Intent(this, EditActivity::class.java)
             startActivityForResult(myIntent,REQ_FOR_EDIT)
+        }
+
+//        Intent(4) 전화하기 버튼 클릭 이벤트
+        callBtn.setOnClickListener {
+            val myUri = Uri.parse("tel:${phoneNumTxt.text}")
+            val myIntent = Intent(Intent.ACTION_DIAL, myUri)
+            startActivity(myIntent)
         }
     }
 
