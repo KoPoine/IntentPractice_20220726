@@ -19,4 +19,36 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"/>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="이름"/>
+
+    <TextView
+        android:id="@+id/nameTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="이름 자리"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="전화번호"/>
+
+    <TextView
+        android:id="@+id/phoneNumTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="010-2977-3754"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/editBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원정보 수정"/>
+
 </LinearLayout>
