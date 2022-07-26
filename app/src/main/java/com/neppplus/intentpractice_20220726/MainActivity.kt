@@ -18,6 +18,10 @@ class MainActivity : AppCompatActivity() {
 //            데이터(수화물) 첨부하는 코드 > 비행기 티켓(myIntent)에 뭔가(extra)를 첨부(put)한다.
             val myName = dataEdt.text.toString()
             myIntent.putExtra("myName", myName)
+                .putExtra("데이터2", "데이터2")
+                .putExtra("데이터3", "데이터3")
+//            myIntent.putExtra("데이터2", "데이터2")
+//            myIntent.putExtra("데이터3", "데이터3")
 
 //            비행기 출발
             startActivity(myIntent)
